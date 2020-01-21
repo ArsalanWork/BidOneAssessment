@@ -1,8 +1,24 @@
 version: '3.4'
 
 services:
-  bidoneassessment.api:
-    image: ${DOCKER_REGISTRY-}bidoneassessmentapi
+  bidone.assessment.db:
+    #container_name: bidone_assessment_db
+    image: mysql:5.7.19
+    ports:
+      - "33063:3306"
+    restart: always
+    #volumes:
+      #- dbvol:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'bidone.assessment'
+      MYSQL_ROOT_PASSWORD: "BidOneDeveloper"
+  nib.humanresources.api:
+    image: ${DOCKER_REGISTRY-}nibhumanresourcesapi
     build:
       context: .
       dockerfile: BidOneAssessment.Api/Dockerfile
+    ports:
+      - 8089:443
+    restart: always
+    depends_on:
+      - bidone.assessment.db
