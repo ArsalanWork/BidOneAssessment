@@ -14,11 +14,11 @@ namespace BidOneAssessment.Infrastructure.Mediator
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             var jsonDetails = JsonConvert.SerializeObject(request);
-            _logger.LogInformation($"Handling GoalsGetter Command {typeof(TRequest).Name}");
+            _logger.LogInformation($"Handling BidOne Assessment Command {typeof(TRequest).Name}");
             _logger.LogDebug($"DEBUG: Starting Command Details: {jsonDetails}");
             var response = await next();
             _logger.LogDebug($"DEBUG: Finished Command Details: {jsonDetails}");
-            _logger.LogInformation($"Handled GoalsGetter Command {typeof(TRequest).Name}");
+            _logger.LogInformation($"Handled BidOne Assessment Command {typeof(TRequest).Name}");
             return response;
         }
     }
