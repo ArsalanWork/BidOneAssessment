@@ -10,6 +10,12 @@ namespace BidOneAssessment.Infrastructure.Repositories
     public class ContactRepository : IContactRepository
     {
         private readonly BidOneAssessmentContext _context;
+
+        public ContactRepository(BidOneAssessmentContext context)
+        {
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
+
         public IUnitOfWork UnitOfWork => _context;
 
         public void Add(Contact toSave)

@@ -14,11 +14,12 @@ namespace BidOneAssessment.Infrastructure
 {
     public class BidOneAssessmentContext : DbContext, IUnitOfWork
     {
-
         private readonly IMediator _mediator; 
         public const string DEFAULT_SCHEMA = null;
-        public BidOneAssessmentContext(DbContextOptions<BidOneAssessmentContext> options) : base(options)
+
+        public BidOneAssessmentContext(DbContextOptions<BidOneAssessmentContext> options, IMediator mediator) : base(options)
         {
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
         public DbSet<Contact> Contacts { get; set; }
@@ -59,7 +60,7 @@ namespace BidOneAssessment.Infrastructure
         {
             var databaseSettings = new WriteStoreSettings
             {
-                ConnectionString = @"Server=localhost;userid=root;password=BidOneDeveloper;port=33063;database=bidone.assessment;sslmode=none;"
+                ConnectionString = @"Server=localhost;userid=root;password=BidOneDeveloper;port=33060;database=bidone.assessment;sslmode=none;"
             };
             var optionsBuilder = new DbContextOptionsBuilder<BidOneAssessmentContext>()
                 .UseMySql(databaseSettings.ConnectionString,
@@ -71,7 +72,30 @@ namespace BidOneAssessment.Infrastructure
                        errorNumbersToAdd: null);
                 });
 
-            return new BidOneAssessmentContext(optionsBuilder.Options);
+            return new BidOneAssessmentContext(optionsBuilder.Options, new NoMediator());
+        }
+
+        public class NoMediator : IMediator
+        {
+            public Task Publish(object notification, CancellationToken cancellationToken = default)
+            {
+                return Task.CompletedTask;
+            }
+
+            public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default) where TNotification : INotification
+            {
+                return Task.CompletedTask;
+            }
+
+            public Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
+            {
+                return Task.FromResult<TResponse>(default(TResponse));
+            }
+
+            public Task<object> Send(object request, CancellationToken cancellationToken = default)
+            {
+                return Task.FromResult<object>(default(object));
+            }
         }
     }
 }

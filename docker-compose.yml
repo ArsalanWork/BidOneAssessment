@@ -5,7 +5,7 @@ services:
     #container_name: bidone_assessment_db
     image: mysql:5.7.19
     ports:
-      - "33063:3306"
+      - "33060:3306"
     restart: always
     #volumes:
       #- dbvol:/var/lib/mysql
@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: BidOneAssessment.Api/Dockerfile
     ports:
-      - 8089:443
+      - 8091:443
     restart: always
     depends_on:
       - bidone.assessment.db

@@ -8,11 +8,11 @@ namespace BidOneAssessment.Domain
     {
         protected Contact () { }
 
-        public Contact(Guid id, string fname, string lname, string email)
+        public Contact(Guid id, string firstName, string lastName, string email)
         {
             this.Id = id;
-            this.FirstName = fname;
-            this.LastName = lname;
+            this.FirstName = firstName;
+            this.LastName = lastName;
             this.Email = email;
             this.Status = ContactStatus.Lead;
             this.InterestedInCommunications = true;

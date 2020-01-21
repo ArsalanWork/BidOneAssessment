@@ -15,7 +15,7 @@ namespace BidOneAssessment.Api.SeedData
 {
     public static class BidOneAssessmentContextSeed
     {
-        public static async Task InitializeAsync(this BidOneAssessmentContext context, IWebHostEnvironment env, IServiceProvider serviceLocator)
+        public static void InitializeAsync(this BidOneAssessmentContext context, IWebHostEnvironment env, IServiceProvider serviceLocator)
         {
             var contentRootPath = env.ContentRootPath;
             var connectionString = serviceLocator.GetService<IOptions<WriteStoreSettings>>().Value.ConnectionString;

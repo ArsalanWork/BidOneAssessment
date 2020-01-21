@@ -25,9 +25,9 @@ namespace BidOneAssessment.QuerySide
                 var fetch = pageSize;
                 connection.Open();
 
-                return await connection.QueryAsync<ContactViewModel>(@"SELECT c.Id, c.FirstName, c.LastName, c.Email
-                    FROM contacts AS c 
-                    ORDER BY g.CreatedDateTime
+                return await connection.QueryAsync<ContactViewModel>(@"
+                    SELECT c.Id AS ContactId, c.FirstName, c.LastName, c.Email, c.Status, c.InterestedInCommunications
+                    FROM contacts AS c
                     LIMIT @skip, @fetch", new { skip, fetch });
             }
         }

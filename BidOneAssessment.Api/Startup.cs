@@ -61,7 +61,7 @@ namespace BidOneAssessment.Api
                     databaseContext.Database.Migrate();
                 }
 
-                databaseContext.InitializeAsync(env, serviceLocator).Wait();
+                databaseContext.InitializeAsync(env, serviceLocator);
             }
 
             if (env.IsDevelopment())
@@ -87,6 +87,7 @@ namespace BidOneAssessment.Api
         // Don't build the container in .Net Core 3.0, that gets done for you by the factory.
         public void ConfigureContainer(ContainerBuilder builder)
         {
+            builder.RegisterModule(new MediatorModule());
             builder.RegisterModule(new ApplicationModule());
         }
     }

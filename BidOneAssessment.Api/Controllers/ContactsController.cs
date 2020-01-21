@@ -25,7 +25,7 @@ namespace BidOneAssessment.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IEnumerable<ContactViewModel>> Get(int page, int pageSize)
+        public async Task<IEnumerable<ContactViewModel>> Get(int page = 1, int pageSize = 5)
         {
             return await this._contactQueries.GetContactsAsync(page, pageSize);
         }

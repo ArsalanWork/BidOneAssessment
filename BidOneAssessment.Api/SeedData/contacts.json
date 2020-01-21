@@ -3,72 +3,54 @@
     "Id": "8668639f-07bb-42fa-9988-73be859059f2",
     "FirstName": "Steve",
     "LastName": "Jobs",
-    "Email": "steve.jobs@bidone.co.nz",
-    "Status": "PastMember",
-    "InterestedInCommunications": "false"
+    "Email": "steve.jobs@bidone.co.nz"
   },
   {
     "Id": "8c3a5cfe-6a28-4b9d-84ac-c704481e0abb",
     "FirstName": "Bill",
     "LastName": "Gates",
-    "Email": "bill.gates@bidone.co.nz",
-    "Status": "RegisteredMember",
-    "InterestedInCommunications": "true"
+    "Email": "bill.gates@bidone.co.nz"
   },
   {
     "Id": "86333f15-839a-4ac8-8f2f-8a8b480fb673",
     "FirstName": "Elon",
     "LastName": "Musk",
-    "Email": "elon.must@bidone.co.nz",
-    "Status": "RegisteredMember",
-    "InterestedInCommunications": "true"
+    "Email": "elon.must@bidone.co.nz"
   },
   {
     "Id": "99f062a3-db2e-4e9d-8a50-c1493abfc175",
     "FirstName": "Mark",
     "LastName": "Zuckerberg",
-    "Email": "mark.zuckerberg@bidone.co.nz",
-    "Status": "Lead",
-    "InterestedInCommunications": "false"
+    "Email": "mark.zuckerberg@bidone.co.nz"
   },
   {
     "Id": "3def7956-f042-4906-a1b0-e7aa094a1ba7",
     "FirstName": "Jeff",
     "LastName": "Bezos",
-    "Email": "jeff.bezos@bidone.co.nz",
-    "Status": "Lead",
-    "InterestedInCommunications": "false"
+    "Email": "jeff.bezos@bidone.co.nz"
   },
   {
     "Id": "06ebfc05-2a84-4f74-bcc9-f4b3aa4baabe",
     "FirstName": "Jack",
     "LastName": "Ma",
-    "Email": "jack.ma@bidone.co.nz",
-    "Status": "PastMember",
-    "InterestedInCommunications": "true"
+    "Email": "jack.ma@bidone.co.nz"
   },
   {
     "Id": "05bb6cd5-e12d-4a43-93f4-f57e5509e6d7",
     "FirstName": "Ren",
     "LastName": "Zhengfei",
-    "Email": "ren.zhengfei@bidone.co.nz",
-    "Status": "Lead",
-    "InterestedInCommunications": "true"
+    "Email": "ren.zhengfei@bidone.co.nz"
   },
   {
     "Id": "7b6317c9-a1d8-4bfa-b505-b445a57d8bf8",
     "FirstName": "Kevin",
     "LastName": "Systrom",
-    "Email": "kevin.systrom@bidone.co.nz",
-    "Status": "PastMember",
-    "InterestedInCommunications": "false"
+    "Email": "kevin.systrom@bidone.co.nz"
   },
   {
     "Id": "49adfe5e-35ce-495e-8e7b-adfcf37751eb",
     "FirstName": "Tim",
     "LastName": "Cook",
-    "Email": "tim.cook@bidone.co.nz",
-    "Status": "RegisteredMember",
-    "InterestedInCommunications": "true"
+    "Email": "tim.cook@bidone.co.nz"
   }
 ]
