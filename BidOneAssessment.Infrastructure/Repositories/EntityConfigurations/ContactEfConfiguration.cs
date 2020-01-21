@@ -10,7 +10,7 @@ namespace BidOneAssessment.Infrastructure.Repositories.EntityConfigurations
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
             // Table name setup
-            builder.ToTable("vacancies", BidOneAssessmentContext.DEFAULT_SCHEMA);
+            builder.ToTable("contacts", BidOneAssessmentContext.DEFAULT_SCHEMA);
 
             // Primary key setup
             builder.HasKey(e => e.Id);

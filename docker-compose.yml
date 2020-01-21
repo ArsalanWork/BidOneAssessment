@@ -12,7 +12,7 @@ services:
     environment:
       MYSQL_DATABASE: 'bidone.assessment'
       MYSQL_ROOT_PASSWORD: "BidOneDeveloper"
-  bidone.assessment.api:
+  bidoneassessment.api:
     image: ${DOCKER_REGISTRY-}bidoneassessmentapi
     build:
       context: .

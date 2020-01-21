@@ -17,7 +17,7 @@ namespace BidOneAssessment.Api.Controllers
         private readonly IMediator _mediator;
         public ContactsController(IContactQueries contactQueries, IMediator mediator)
         {
-            _contactQueries = contactQueries;
+            this._contactQueries = contactQueries;
             this._mediator = mediator;
         }
 
