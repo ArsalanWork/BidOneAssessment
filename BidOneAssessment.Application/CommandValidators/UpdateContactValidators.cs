@@ -5,9 +5,9 @@ using FluentValidation;
 
 namespace BidOneAssessment.Application.CommandValidators
 {
-    public class CreateContactValidator : AbstractValidator<CreateContact>
+    public class UpdateContactValidators : AbstractValidator<UpdateContact>
     {
-        public CreateContactValidator()
+        public UpdateContactValidators()
         {
             RuleFor(cmd => cmd.ContactId).NotEqual(default(Guid));
             RuleFor(cmd => cmd.FirstName).NotEmpty().NotExecutableScript();

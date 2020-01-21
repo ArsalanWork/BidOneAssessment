@@ -20,8 +20,4 @@
     <ProjectReference Include="..\BidOneAssessment.Domain\BidOneAssessment.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mediator\" />
-  </ItemGroup>
-
 </Project>
