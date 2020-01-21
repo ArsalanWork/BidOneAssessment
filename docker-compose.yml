@@ -12,8 +12,8 @@ services:
     environment:
       MYSQL_DATABASE: 'bidone.assessment'
       MYSQL_ROOT_PASSWORD: "BidOneDeveloper"
-  nib.humanresources.api:
-    image: ${DOCKER_REGISTRY-}nibhumanresourcesapi
+  bidone.assessment.api:
+    image: ${DOCKER_REGISTRY-}bidoneassessmentapi
     build:
       context: .
       dockerfile: BidOneAssessment.Api/Dockerfile
