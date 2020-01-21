@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidOneAssessment.Api", "BidOneAssessment.Api\BidOneAssessment.Api.csproj", "{7B9F7F62-2AB8-4CCA-BCE8-4C05C8C4796A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidOneAssessment.Api", "BidOneAssessment.Api\BidOneAssessment.Api.csproj", "{7B9F7F62-2AB8-4CCA-BCE8-4C05C8C4796A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidOneAssessment.Application", "BidOneAssessment.Application\BidOneAssessment.Application.csproj", "{E2030FF8-B49E-4A3E-A874-FA6831DC035E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidOneAssessment.Application", "BidOneAssessment.Application\BidOneAssessment.Application.csproj", "{E2030FF8-B49E-4A3E-A874-FA6831DC035E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidOneAssessment.Infrastructure", "BidOneAssessment.Infrastructure\BidOneAssessment.Infrastructure.csproj", "{0FB283FF-919A-405B-8BE3-07FEDF58146B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidOneAssessment.Infrastructure", "BidOneAssessment.Infrastructure\BidOneAssessment.Infrastructure.csproj", "{0FB283FF-919A-405B-8BE3-07FEDF58146B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidOneAssessment.Domain", "BidOneAssessment.Domain\BidOneAssessment.Domain.csproj", "{220A7641-658B-4873-9A20-92AD0A40B18E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidOneAssessment.Domain", "BidOneAssessment.Domain\BidOneAssessment.Domain.csproj", "{220A7641-658B-4873-9A20-92AD0A40B18E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- InterfaceLayer", "1- InterfaceLayer", "{3D30F25F-5FA4-42A9-AA03-EB2E55656CAE}"
 EndProject
@@ -21,13 +21,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.3-DomainLayer", "2.3-Doma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.4-CoreLayer", "2.4-CoreLayer", "{50DBF96D-68D5-43C4-AC7E-2748BE0910B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidOneAssessment.Core", "BidOneAssessment.Core\BidOneAssessment.Core.csproj", "{615EFBBE-5D7F-4BE6-9F96-0E1035B1E0A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidOneAssessment.Core", "BidOneAssessment.Core\BidOneAssessment.Core.csproj", "{615EFBBE-5D7F-4BE6-9F96-0E1035B1E0A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- CommandSide", "2- CommandSide", "{A7700BA8-4750-4F05-9E93-94AC754023EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- QuerySide", "3- QuerySide", "{135EAD70-C2FA-4AB5-AB74-AA639F33B6BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidOneAssessment.QuerySide", "BidOneAssessment.QuerySide\BidOneAssessment.QuerySide.csproj", "{B1B71D81-6C39-4BA9-B064-5DFECAC35CF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidOneAssessment.QuerySide", "BidOneAssessment.QuerySide\BidOneAssessment.QuerySide.csproj", "{B1B71D81-6C39-4BA9-B064-5DFECAC35CF8}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E6DC4C4D-0DA8-4957-A9E5-9303F13C3134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{B1B71D81-6C39-4BA9-B064-5DFECAC35CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B71D81-6C39-4BA9-B064-5DFECAC35CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B71D81-6C39-4BA9-B064-5DFECAC35CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6DC4C4D-0DA8-4957-A9E5-9303F13C3134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DC4C4D-0DA8-4957-A9E5-9303F13C3134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DC4C4D-0DA8-4957-A9E5-9303F13C3134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DC4C4D-0DA8-4957-A9E5-9303F13C3134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

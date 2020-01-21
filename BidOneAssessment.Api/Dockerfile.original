@@ -6,11 +6,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 COPY ["BidOneAssessment.Api/BidOneAssessment.Api.csproj", "BidOneAssessment.Api/"]
-COPY ["BidOneAssessment.Application/BidOneAssessment.Application.csproj", "BidOneAssessment.Application/"]
-COPY ["BidOneAssessment.Domain/BidOneAssessment.Domain.csproj", "BidOneAssessment.Domain/"]
-COPY ["BidOneAssessment.Core/BidOneAssessment.Core.csproj", "BidOneAssessment.Core/"]
-COPY ["BidOneAssessment.QuerySide/BidOneAssessment.QuerySide.csproj", "BidOneAssessment.QuerySide/"]
-COPY ["BidOneAssessment.Infrastructure/BidOneAssessment.Infrastructure.csproj", "BidOneAssessment.Infrastructure/"]
 RUN dotnet restore "BidOneAssessment.Api/BidOneAssessment.Api.csproj"
 COPY . .
 WORKDIR "/src/BidOneAssessment.Api"
