@@ -2,7 +2,7 @@
 
 namespace BidOneAssessment.Application.Commands
 {
-    public class AddContact
+    public class CreateContact
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
