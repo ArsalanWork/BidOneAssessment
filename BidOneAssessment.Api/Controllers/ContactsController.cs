@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BidOneAssessment.Application.Commands;
 using BidOneAssessment.QuerySide;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,7 +42,7 @@ namespace BidOneAssessment.Api.Controllers
             {
                 command.TriggeredBy = guid;
 
-                if (await _mediator.Send(command))
+                if (await _mediator.Send<bool>(command))
                 {
                     return Ok();
                 }
@@ -55,7 +56,7 @@ namespace BidOneAssessment.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Post([FromBody]UpdateContact command, [FromHeader(Name = "user-id")] string userId)
+        public async Task<IActionResult> Put([FromBody]UpdateContact command, [FromHeader(Name = "user-id")] string userId)
         {
             if (command == null) return BadRequest();
 
@@ -63,7 +64,59 @@ namespace BidOneAssessment.Api.Controllers
             {
                 command.TriggeredBy = guid;
 
-                if (await _mediator.Send(command))
+                if (await _mediator.Send<bool>(command))
+                {
+                    return Ok();
+                }
+                return BadRequest();
+            }
+
+            return Unauthorized();
+        }
+
+        [HttpPut("{id}/Unsubscribe")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Unsubscribe(Guid id, [FromHeader(Name = "user-id")] string userId)
+        {
+            if (id == Guid.Empty) return BadRequest();
+
+            if (Guid.TryParse(userId, out Guid guid) && guid != Guid.Empty)
+            {
+                var command = new UnsubscribeContact
+                {
+                    ContactId = id,
+                    TriggeredBy = guid
+                };
+
+                if (await _mediator.Send<bool>(command))
+                {
+                    return Ok();
+                }
+                return BadRequest();
+            }
+
+            return Unauthorized();
+        }
+
+        [HttpPut("{id}/Subscribe")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Subscribe(Guid id, [FromHeader(Name = "user-id")] string userId)
+        {
+            if (id == Guid.Empty) return BadRequest();
+
+            if (Guid.TryParse(userId, out Guid guid) && guid != Guid.Empty)
+            {
+                var command = new SubscribeContact
+                {
+                    ContactId = id,
+                    TriggeredBy = guid
+                };
+
+                if (await _mediator.Send<bool>(command))
                 {
                     return Ok();
                 }

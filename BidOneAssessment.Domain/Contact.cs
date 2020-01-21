@@ -1,6 +1,5 @@
 ﻿using BidOneAssessment.Core;
 using BidOneAssessment.Core.Domain.Marketing.Events;
-using BidOneAssessment.Core.Events;
 using System;
 
 namespace BidOneAssessment.Domain
