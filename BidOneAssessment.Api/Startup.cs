@@ -4,12 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using BidOneAssessment.Api.AutofacModules;
+using BidOneAssessment.Api.SeedData;
+using BidOneAssessment.Infrastructure;
 using BidOneAssessment.Infrastructure.Configs;
 using BidOneAssessment.QuerySide.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -47,6 +50,20 @@ namespace BidOneAssessment.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Seed data and apply migrations here
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var serviceLocator = serviceScope.ServiceProvider;
+                var databaseContext = serviceLocator.GetService<BidOneAssessmentContext>();
+
+                if (!databaseContext.AllMigrationsApplied())
+                {
+                    databaseContext.Database.Migrate();
+                }
+
+                databaseContext.InitializeAsync(env, serviceLocator).Wait();
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

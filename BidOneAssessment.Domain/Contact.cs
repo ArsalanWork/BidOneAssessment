@@ -15,6 +15,7 @@ namespace BidOneAssessment.Domain
             this.LastName = lname;
             this.Email = email;
             this.Status = ContactStatus.Lead;
+            this.InterestedInCommunications = true;
 
             this.AddDomainEvent(new ContactCreated(Id, FirstName, LastName, Email));
         }
