@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace BidOneAssessment.Core.Events
+namespace BidOneAssessment.Core.Domain.Marketing.Events
 {
     public class ContactUnsubscribed : DomainEvent, INotification
     {

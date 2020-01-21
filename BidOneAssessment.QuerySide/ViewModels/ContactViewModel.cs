@@ -1,10 +1,8 @@
-﻿using BidOneAssessment.Core;
-using MediatR;
-using System;
+﻿using System;
 
-namespace BidOneAssessment.Application.Commands
+namespace BidOneAssessment.QuerySide
 {
-    public class CreateContact : Command, IRequest<bool>
+    public class ContactViewModel
     {
         public Guid ContactId { get; set; }
         public string FirstName { get; set; }

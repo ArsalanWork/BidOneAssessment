@@ -4,7 +4,7 @@ using System;
 
 namespace BidOneAssessment.Application.Commands
 {
-    public class UnsubscribeContact : Command, IRequest<bool>
+    public class SubscribeContact : Command, IRequest<bool>
     {
         public Guid ContactId { get; set; }
     }

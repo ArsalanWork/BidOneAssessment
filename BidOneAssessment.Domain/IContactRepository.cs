@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BidOneAssessment.Core;
+using System;
+using System.Threading.Tasks;
 
 namespace BidOneAssessment.Domain
 {
-    class IContactRepository
+    public interface IContactRepository : IRepository<Contact>
     {
+        void Add(Contact toSave);
+        void Update(Contact toUpdate);
+        Task<Contact> GetAsync(Guid contactId);
+        Task<bool> CheckIfExistsAsync(Guid contactId);
     }
 }

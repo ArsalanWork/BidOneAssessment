@@ -1,16 +1,16 @@
 ﻿using MediatR;
 using System;
 
-namespace BidOneAssessment.Core.Events
+namespace BidOneAssessment.Core.Domain.Marketing.Events
 {
-    public class ContactCreated : DomainEvent,  INotification
+    public class ContactCreated : DomainEvent, INotification
     {
         public ContactCreated(Guid contactId, string fname, string lname, string email)
         {
-            this.ContactId = contactId;
-            this.FirstName = fname;
-            this.LastName = lname;
-            this.Email = email;
+            ContactId = contactId;
+            FirstName = fname;
+            LastName = lname;
+            Email = email;
         }
 
         public Guid ContactId { get; private set; }
