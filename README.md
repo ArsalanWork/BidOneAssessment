@@ -28,6 +28,6 @@
 ## Expected Issues:
 - The application throws few mysql connection errors when starting. It is an expected behavior. The API starts attempting connection with mySQL when mySQL container is ready but not yet ready for connections. There's retry policy in place so the API eventually gets a successful connection when mySQL is ready for connections. If no successful connection is made for a 1 minute, please report as that will be an unexpected behavior.
 - The API container is setup to forward its localport 80 to your machine port 8091. If port 8091 is already in use, you may receive a relevant error. You can simply define some other available port in `docker.compose.yml` file in the solution directory.
-- If you face any other errors, please reach out for help on the following contact details.
+- If you face any other errors, please reach out to me for assistance.
 
 
