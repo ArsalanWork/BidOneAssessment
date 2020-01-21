@@ -1,4 +1,5 @@
 ﻿using BidOneAssessment.Core;
+using BidOneAssessment.Domain;
 using BidOneAssessment.Infrastructure.Configs;
 using BidOneAssessment.Infrastructure.Mediator;
 using BidOneAssessment.Infrastructure.Repositories.EntityConfigurations;
@@ -19,6 +20,8 @@ namespace BidOneAssessment.Infrastructure
         public BidOneAssessmentContext(DbContextOptions<BidOneAssessmentContext> options) : base(options)
         {
         }
+
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
